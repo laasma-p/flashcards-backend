@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db");
+const Flashcard = require("./Flashcard");
 
 const Deck = sequelize.define("deck", {
   name: {
@@ -7,5 +8,8 @@ const Deck = sequelize.define("deck", {
     allowNull: false,
   },
 });
+
+Deck.hasMany(Flashcard, { foreignKey: "deckId", onDelete: "CASCADE" });
+Flashcard.belongsTo(Deck, { foreignKey: "deckId" });
 
 module.exports = Deck;
