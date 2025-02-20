@@ -14,7 +14,7 @@ const User = sequelize.define(
       allowNull: false,
       unique: true,
     },
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -32,7 +32,7 @@ const User = sequelize.define(
       defaultValue: 0,
       allowNull: false,
     },
-    profile_picture: {
+    profilePicture: {
       type: DataTypes.STRING,
       allowNull: true,
     },
